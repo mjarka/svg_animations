@@ -4,20 +4,16 @@
 
     <style>
         @keyframes drawIn {
-            0% {
-
-                stroke-dasharray: 702;
-                stroke-dashoffset: 702;
-            }
-
-            75% {}
-        }
-
+  to {
+    stroke-dashoffset: 0;
+  }
+}
         #maska {
 
             stroke-dasharray: 702;
-
-            animation: drawIn 3s ease-out forwards
+            stroke-dasharray: 702;
+                stroke-dashoffset: 702;
+            animation: drawIn 3s ease forwards
         }
     </style>
 </head>
@@ -157,5 +153,4 @@ var myDrawing1 = new Drawing( Mask, 't0, 0, 0', 800 );
 myDrawing1.initDraw();
 
 </script>  -->
-
 
