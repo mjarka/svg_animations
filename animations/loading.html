@@ -65,14 +65,17 @@
 		//   var bigCircle = s.circle(527, 185, 5);
 		//   var ampCircle = s.circle(120, 475, 5);
 		var foot = s.select('#foot');
-		var note = s.select('#note')
-		
-
+		var note = s.select('#note');
+		var shadow = s.select('#shadow')
+		var c = s.circle(57, 39, 1);
 		var animfoot = function () {
-			foot.animate({  transform: 'rotate(16 57, 38)'    }, 310, mina.backout,animfoot2 );
+			animshadow2();
+			foot.animate({  transform: 'rotate(16 57, 39)'    }, 310, mina.backout,animfoot2 );
+			
 		}
 		var animfoot2 = function () {
-			foot.animate({  transform: 'rotate(0 57, 38)'    }, 140, mina.backout, animfoot);
+			foot.animate({  transform: 'rotate(0 57, 39)'    }, 140, mina.backout, animfoot);
+			animshadow();
 		}
 		var animnote = function () {
 			note.animate({  'transform': 's 1, .9 57 38'    }, 1240, mina.linear, animnote2);
@@ -80,7 +83,15 @@
 		var animnote2 = function () {
 			note.animate({  'transform': 's 1, 1 57 38'    }, 1540, mina.linear, animnote);
 		}
+
+		var animshadow = function () {
+			shadow.animate({  'transform': 's .3, 1 57 38'     }, 340, mina.easeout, );
+		}
+		var animshadow2 = function () {
+			shadow.animate({  'transform': 's 1, 1 57 38'     }, 210, mina.easein, );
+		}
 	animfoot();
 	animnote();
+	
 	</script>
 </body>
