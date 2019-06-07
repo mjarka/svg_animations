@@ -67,15 +67,17 @@
 		var foot = s.select('#foot');
 		var note = s.select('#note');
 		var shadow = s.select('#shadow')
-		var c = s.circle(57, 39, 1);
+	
+		// var c = s.circle(57, 39, 1);
 		var animfoot = function () {
-			animshadow2();
+			animshadow();
 			foot.animate({  transform: 'rotate(16 57, 39)'    }, 310, mina.backout,animfoot2 );
 			
 		}
 		var animfoot2 = function () {
+			animshadow2();
 			foot.animate({  transform: 'rotate(0 57, 39)'    }, 140, mina.backout, animfoot);
-			animshadow();
+			
 		}
 		var animnote = function () {
 			note.animate({  'transform': 's 1, .9 57 38'    }, 1240, mina.linear, animnote2);
@@ -85,10 +87,10 @@
 		}
 
 		var animshadow = function () {
-			shadow.animate({  'transform': 's .3, 1 57 38'     }, 340, mina.easeout, );
+			shadow.animate({  'transform': 's .7, 1 57 38'     }, 120, mina.linear, );
 		}
 		var animshadow2 = function () {
-			shadow.animate({  'transform': 's 1, 1 57 38'     }, 210, mina.easein, );
+			shadow.animate({  'transform': 's 1, 1 57 38'     }, 10, mina.linear, );
 		}
 	animfoot();
 	animnote();
